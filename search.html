@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Поиск сотрудников</h1>
+    <div class="search-form" id="searchForm">
+        <label for="searchInput"></label><input type="text" id="searchInput" placeholder="Введите запрос...">
+        <button id="searchBtn" class="btn">Поиск</button>
+    </div>
+    <div id="results"></div>
+{% endblock %}

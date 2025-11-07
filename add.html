@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Добавить сотрудника</h1>
+    <form method="POST" action="{{ url_for('add_employee') }}" class="add-form" id="addForm">
+        <label>Имя:</label>
+        <label>
+            <input type="text" name="name" required>
+        </label>
+
+        <label>Должность:</label>
+        <label>
+            <input type="text" name="position" required>
+        </label>
+
+        <label>Отдел:</label>
+        <label>
+            <select name="department_id" required>
+                {% for dept in departments %}
+                    <option value="{{ dept.id }}">{{ dept.name }} ({{ dept.city.name }})</option>
+                {% endfor %}
+            </select>
+        </label>
+
+        <button type="submit" class="btn">Сохранить</button>
+    </form>
+{% endblock %}
